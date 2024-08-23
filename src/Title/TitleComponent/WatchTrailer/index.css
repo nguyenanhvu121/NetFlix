@@ -1,0 +1,187 @@
+.watch{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10; 
+    cursor: pointer;
+}
+.screen{
+    width: 100% !important;
+    height: 100% !important;
+    animation: show 0.4s forwards;
+}
+.watch-main{
+    width: 50%;        
+    top: 50%;
+    left: 50%;    
+    position: absolute;    
+    transform: translate(-50%, -50%);    
+}
+.dark-watch{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);       
+}
+.watch-poster img{
+    width: 100%;
+}
+.watch-title h2{
+    font-size: 120%;
+    font-weight: 500;
+    margin: 0% 4% 2% 0;   
+    border-left: solid 3px #e50914;
+    padding-left: 2.5%;
+}
+.watch-title{    
+    justify-content: space-between;
+    align-items: center;    
+}
+.loadmentor{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);        
+}
+.watch-poster .load{    
+    width: 100%;
+    height: 100%;
+    border-left: solid 2px #e50914;
+    border-bottom: solid 3px #e50914;
+    border-radius: 50%;
+    animation: load 2s infinite;
+}
+
+@keyframes load {
+    from{
+        rotate: 0;
+    }to{
+        rotate: 360deg;
+    }
+}
+.timeLine{
+    position: absolute;
+    width: 100%;
+    /* top: 80%;         */
+    bottom: 35px;
+    padding-left: 2%;    
+    height: 50px;    
+    box-sizing: border-box;
+}
+.timeLine:hover .timeline-main{
+    display: unset;
+}
+.timeLine-range{
+    width: 98%;
+}
+.timeLine-range input{
+    width: 97%;
+    height: 2px;
+    outline: none;        
+    accent-color: #e50914;    
+    cursor: pointer;
+}
+.timeLine-range input::-moz-range-progress{
+    background-color:#e50914;
+}
+.timeLine-list-button img{
+    width: 34px;
+}
+.timeLine-list-button{        
+    width: 97%;
+    justify-content: space-between;
+    margin-top: 2%;        
+}
+.load-active{
+    background-color: rgba(0, 0, 0, 0.8);    
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;    
+    animation: hide 0.5s forwards;
+}
+.load-active img{
+    width: 50%;
+}
+.timeLine-range span{
+    font-size: 12px;
+    margin-left: 1%;
+}
+.timeLine-buttonSpeaker, .timeLine-buttonFullScreen{
+    position: relative;
+    margin-left: 30px;
+}
+.timeLine-buttonSpeaker:hover .setvoid{
+    display: flex;
+}
+.setvoid{
+    position: absolute;
+    bottom: 270%;
+    rotate: 270deg;    
+    left: -150%;
+    background-color: black;
+    display: none;
+    height: 20px;
+    align-items: center;   
+    padding: 0 20%;     
+    transition: all 2s;
+}
+.setvoid input{
+    margin: 10px 0;
+    height: 5px;    
+    accent-color: #e50914;    
+}
+.watch-grene{
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    width: 20%;
+    height: 7%;    
+    overflow: hidden;
+}
+.watch-grene span{
+    font-size: 17px;    
+    border-left: solid 2px #e50914;    
+    padding-left: 4%;    
+    position: absolute;
+    font-weight: 600;
+    top: 100%;                
+    color: #d3d5d5;
+}
+.hideGenre{
+    animation: hideGenre 2s forwards 2s;
+}
+@keyframes hideGenre {
+    from{
+        top: 100%;
+    }
+    to{
+        top: 12%;
+    }    
+}
+
+@media only screen and (max-width: 1100px){
+    .watch-main{
+        width: 70%;
+        top: 35%
+    }
+    .watch-grene{
+        width: 30%;
+        height: 7%; 
+        top: 20%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .watch-main{
+        width: 90%;
+    }
+    .watch-grene{
+        width: 40%;
+        height: 15%; 
+        top: 20%;
+    }       
+}

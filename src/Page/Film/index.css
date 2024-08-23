@@ -1,0 +1,65 @@
+.film-header{       
+    justify-content: space-between;
+    margin-bottom: 7%;    
+}
+.film-header select, .film-header .menu{
+    padding-left: 10px;
+}
+.film-title-left{
+    width: 50%;
+}
+.film-title-left h1{    
+    font-size: 20px;
+    font-weight: 800;
+}
+.film-title-left select{
+    border: solid 1px #fff;
+    margin-top: 0;
+    margin-left: 15%;
+    height: 35px;
+    padding-right: 20px;
+}
+.film-title-right img{
+    width: 20px;
+}
+.aligh{
+    width: 15%;
+    padding: 2%;
+}
+.aligh, .menu{
+    border: solid 1px #fff;
+    height: 35px;
+}
+.menu{
+    width: 200px;
+    height: 35px;
+    padding:4% 2%;    
+    justify-content: space-between;
+}
+.menu select{
+    margin: 0;    
+    width: 85%;
+}
+@media only screen and (max-width: 500px){
+    .film-title-left select{
+        font-size: 13px;
+        height: 30px;
+    }
+    .film-title-right img{
+        width: 17px;
+    }    
+    .aligh{
+        height: 30px;
+        width: 30px;
+    }
+    .menu{
+        height: 30px;
+        width: 100px;
+    }
+    .menu select{
+        font-size: 13px;
+    }
+    .film-title-left option{
+        font-size: 13px;        
+    }
+}

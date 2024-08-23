@@ -1,0 +1,29 @@
+.footer{
+    margin: 0% 4% 4% 4%;
+}
+.footer-list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.footer h3{
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 3%;
+}
+.footer span{
+    margin-bottom: 3%;    
+}
+.footer span a:hover{
+    text-decoration: underline 0.5px rgba(255, 255, 255, 0.5);
+}
+.footer span a{
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;    
+}
+@media only screen and (max-width: 500px){
+    .footer-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

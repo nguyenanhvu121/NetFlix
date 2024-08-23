@@ -1,0 +1,240 @@
+.main{
+    position: relative;        
+}
+.darkmain{    
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, #000000 6%, rgba(0,0,0,0.8528832378223495) 21%, rgba(0,0,0,0.21104942693409745) 100%);    
+}    
+.poster{
+    position: relative;
+    z-index: -1;        
+}
+.dark{
+    background-color: rgb(34, 142, 57) !important;
+}
+.poster img, .poster video{
+    width: 100%;
+    height: 100%;
+}
+.titleMain{   
+    width: 30%;    
+    transform-origin:left bottom; 
+    position: relative;   
+    top: 0%;        
+}
+.title-main-block{
+    position: relative;       
+    width: 100%;            
+}
+.zoomIn{
+    animation: zoomIn 2s forwards 3s;
+}
+.zoomOut{
+    animation: zoomOut 2s forwards;
+}
+@keyframes zoomOut{
+    from {
+        top: 70px;
+        transform: scale(0.7,0.7);        
+        right: 50px;
+    }to{
+        top: 0px;
+        right: 0px;
+        transform: scale(1,1);
+    }
+}
+
+@keyframes zoomIn{
+    from {
+        top: 0px;
+        transform: scale(1,1);        
+        right: 0px;
+    }to{
+        top: 70px;
+        right: 50px;
+        transform: scale(0.7,0.7);
+    }
+}
+.show{
+    animation: show 2s forwards;
+}
+.hide{
+    animation: hide 1s forwards 3s;
+}
+@keyframes show {
+    from{        
+        opacity: 0;             
+    }to{
+        opacity: 1;
+    }
+}
+@keyframes hide {
+    from{        
+        opacity: 1;                                
+    }to{        
+        opacity: 0;                                
+    }
+}
+.titleMain img{
+    width: 115%;        
+}
+.title{
+    position: absolute;
+    top: 15%;
+    left: 4%;        
+}
+.trending{
+    margin: 5% 0 3% 0;
+}
+.trending span{
+    font-size: 12px;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    font-weight: 500;
+}
+.trending p{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+.volunm{
+    position: absolute;
+    top: 50%    ;
+    right: 4%;
+    width: 40px;
+    height: 40px;    
+    border: solid 1px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;      
+    z-index: 0;  
+}
+.volunm:hover{
+    border: solid 1px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.volunm:active{
+    border: solid 1px rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.btnvolunm{    
+    justify-content: center;      
+    width: 100%;
+    height: 100%;          
+}
+.volunm img{
+    width: 35%;        
+    position: relative;    
+    z-index: -1;
+}
+.describe-film{
+    width: 100%;    
+    font-size: 14px;    
+    font-weight: 400;
+    color: rgb(225, 223, 220);    
+}
+.describe h1{    
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.k{    
+    position: relative;
+    top: -170px;
+}
+
+@media only screen and (max-width: 500px){
+    .titleMain{
+        top: 8%;
+    }
+    .titleMain img{
+        width: 100%;
+    }
+    .volunm{
+        top: 12%;        
+        width: 25px;
+        height: 25px;
+    }
+    .volunm img{
+        width: 10px;
+    }
+    .describe{
+        display: none;
+    }
+    .darkmain .title{
+        display: none;
+    }   
+    .info-phone{
+        display: block;
+    }
+}
+@media only screen and (max-width: 1100px){
+    .k{
+        top: 0;
+    }      
+    .title{
+        top: 30%;
+    }
+    @keyframes zoomOut{
+        from {
+            top: 70px;
+            transform: scale(0.7,0.7);        
+            right: 45px;
+        }to{
+            top: 0px;
+            right: 0px;
+            transform: scale(1,1);
+        }
+    }
+    
+    @keyframes zoomIn{
+        from {
+            top: 0px;
+            transform: scale(1,1);        
+            right: 0px;
+        }to{
+            top: 70px;
+            right: 45px;
+            transform: scale(0.7,0.7);
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    .titleMain{
+        top: 100px;
+    }         
+    .volunm{
+        display: none;
+    }    
+    .darkmain .title{
+        top: 5%;
+    }
+    .title{
+        top: 10px;
+    }    
+    .describe-film{
+        display: none;
+    }
+}
+.infoFilm{
+    animation: show 1s forwards;
+}
+.poster-thubnail{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.9904190544412608) 0%, rgba(0,0,0,0) 66%);        
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.button-phone .button-icon{
+    margin-left: 5%;
+}

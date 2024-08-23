@@ -1,0 +1,40 @@
+.season{
+    margin-top: 5px;
+    width: 100%;        
+}
+.season-release-year{
+    font-size: 15px;    
+    font-weight: 800;    
+    margin-top: 3%;
+}
+.season-synopsis{    
+    width:30%;
+    font-size: 14px;
+    margin-top: 5px;
+    color: rgb(158, 158, 158);
+}
+.episodes-thumbnail{        
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    margin-right: 4%;
+}
+@media (max-width: 900px){
+    .episodes-thumbnail{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .season-release-year{
+        margin-top: 5%;
+    }
+}
+@media (max-width: 400px) {
+    .episodes-thumbnail{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .season-synopsis{
+        width: 100%;
+    }
+}
+.season-active{
+    display: none;
+}

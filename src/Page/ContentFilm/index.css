@@ -1,0 +1,130 @@
+.content-poster-image {
+    width: 98%;        
+    height: 120px;
+    cursor: pointer;          
+    border-radius: 5px;
+    margin-bottom: 5%;
+    background-color: #b62a31;    
+    object-fit:cover;
+}
+.infoPoster{
+    width: 100%;    
+}
+.slider-container{          
+    bottom: 0px;
+    position: relative;    
+}
+.slick-list{
+    z-index: 1;
+}
+.slick-dots li button::before{    
+    color: rgba(255, 255, 255, 0.5);
+    content: "⎯";
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.slick-dots li.slick-active button::before{
+    color: red;
+}
+.slick-dots{
+    top: -25%;
+    text-align: right;        
+}
+.title-slider{
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    margin-bottom: 5px;
+}
+.title-slider-move{    
+    overflow: hidden;      
+    width: 20%;
+    cursor: pointer;
+}
+.div{    
+    position: relative;
+    left: -100%;    
+}
+.div img{
+    margin-bottom: 0;
+}
+.title-slider-move p{
+    font-size: 10px;    
+    font-weight: 600;
+    margin-right: 5px;   
+    color: rgba(9, 221, 228, 1); 
+}
+.title-slider:hover div{    
+    animation: kty 1s forwards;
+}
+.title-slider-move:hover div{    
+    animation: kte 1s forwards;        
+}
+@keyframes kte {
+    from{
+        left: -48%;
+    }to{
+        left: 5%;
+    }
+}
+@keyframes kty{
+    from {
+        left: -100%;        
+    }to{
+        left: -48%;
+    }
+}
+.title-slider h3{
+    font-size: 16px;    
+}
+.slick-prev::before{
+    content: '‹';
+}
+.slick-next::before{
+    content: '›';
+}
+.slick-prev:before, .slick-next:before{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: rgb(202, 36, 36);
+}
+@media only screen and (max-width: 500px){
+    .slick-prev{
+        left: -20px;
+    }
+    .slick-arrow::before{
+        display: none;
+    }
+    .slick-next{
+        right: -20px;
+    }
+    .slick-dots li{
+        margin: 0 5px;    
+    }
+    .slick-dots{
+        top: -40%;
+    }    
+    .title-slider-move{                
+        width: 40%;
+        display: none;
+    }
+    .content-poster-image{
+        height: unset;
+    }    
+    .title-slider{
+        width: 80%;
+    }    
+    .title-slider h3{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 900px){
+    @keyframes kty{
+        from {
+            left: -100%;        
+        }to{
+            left: -70%;
+        }
+    }    
+}
