@@ -15,7 +15,7 @@ function Notification() {
     },
     {
       id: 2,
-      title: "tèo em",
+      title: "Tèo em",
       img: "https://static2.vieon.vn/vieplay-image/thumbnail_v4/2023/02/15/sdjaxdyd_1920x1080-teoem_296_168.jpeg",
       describe: "Cuộc hành trình đi giành lấy người mình yêu của Tèo anh, với sự đồng hành của Tèo em sẽ có những chuyện gì xảy ra",
       new: true,
@@ -26,35 +26,7 @@ function Notification() {
       img: "https://cdn.eva.vn/upload/3-2013/images/2013-07-05/1373010048-2.jpg",
       describe: "Một cuộc chạm trán xảy ra để giành lấy chợ lớn, một trong những đặc khu kinh tế của thế giới ngầm. ai sẽ giành lấy được nó.",
       new: true,
-    },
-    {
-      id: 4,
-      title: "Bụi đời chợ lớn",
-      img: "https://cdn.eva.vn/upload/3-2013/images/2013-07-05/1373010048-2.jpg",
-      describe: "Một cuộc chạm trán xảy ra để giành lấy chợ lớn, một trong những đặc khu kinh tế của thế giới ngầm. ai sẽ giành lấy được nó.",
-      new: true,
-    },
-    {
-      id: 5,
-      title: "Bụi đời chợ lớn",
-      img: "https://cdn.eva.vn/upload/3-2013/images/2013-07-05/1373010048-2.jpg",
-      describe: "Một cuộc chạm trán xảy ra để giành lấy chợ lớn, một trong những đặc khu kinh tế của thế giới ngầm. ai sẽ giành lấy được nó.",
-      new: true,
-    },
-    {
-      id: 6,
-      title: "Bụi đời chợ lớn",
-      img: "https://cdn.eva.vn/upload/3-2013/images/2013-07-05/1373010048-2.jpg",
-      describe: "Một cuộc chạm trán xảy ra để giành lấy chợ lớn, một trong những đặc khu kinh tế của thế giới ngầm. ai sẽ giành lấy được nó.",
-      new: true,
-    },
-    {
-      id: 7,
-      title: "Bụi đời chợ lớn",
-      img: "https://cdn.eva.vn/upload/3-2013/images/2013-07-05/1373010048-2.jpg",
-      describe: "Một cuộc chạm trán xảy ra để giành lấy chợ lớn, một trong những đặc khu kinh tế của thế giới ngầm. ai sẽ giành lấy được nó.",
-      new: true,
-    },
+    }
   ];
   const [valueNew, setValueNew]  = useState(0);  
   let count = 0;

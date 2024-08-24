@@ -19,7 +19,7 @@ function Home() {
   const describeRef = useRef();
   const iconMutedRef = useRef();
   const volunmRef = useRef();
-  const volunmRefChild = useRef();
+  const volunmRefChild = useRef();  
   let iconCheck = "muted";
   const getTagClassList = (element, classA, classB) => {
     element.current.classList.replace(classA, classB);
@@ -32,23 +32,21 @@ function Home() {
   };
   let myTimeOut;
   const timeLoad = () => {
-    if (window.innerWidth > 500) {
-      myTimeOut = setTimeout(() => {
-        getClassToggle(posterRef, "none");
-        getTagAdd(posterRef, "hide");
-        getTagAdd(videoRef, "show");
-        getClassToggle(videoRef, "none");
-        getClassToggle(volunmRef, "none");
-        videoRef.current.play();
-        if (!!timeLoad) {
-          clearTimeout(timeLoad);
-        }
-        if (document.querySelector("body").offsetWidth > 900) {
-          document.querySelector(".title-main-block").classList.add("zoomIn");
-          document.querySelector(".describe-film").classList.add("hide");
-        }
-      }, 2000);
-    }
+    myTimeOut = setTimeout(() => {
+      getClassToggle(posterRef, "none");
+      getTagAdd(posterRef, "hide");
+      getTagAdd(videoRef, "show");
+      getClassToggle(videoRef, "none");
+      getClassToggle(volunmRef, "none");
+      videoRef.current.play();
+      if (!!timeLoad) {
+        clearTimeout(timeLoad);
+      }    
+      if (document.querySelector("body").offsetWidth > 900) {
+        document.querySelector(".title-main-block").classList.add("zoomIn");
+        document.querySelector(".describe-film").classList.add("hide");
+      }
+    }, 2000);
   };
   const volunmTP = (check, classNameTag, classReplace, iconCheck) => {
     videoRef.current.muted = check;
@@ -79,7 +77,7 @@ function Home() {
   const handleTitle = (link) => {
     navigate(`/title/${link}`);
     clearTimeout(myTimeOut);
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0);
   };
   const handleMylist = () => {
     const buttonIcon = document.querySelectorAll(".button-icon");
@@ -344,8 +342,12 @@ function Home() {
   api.map((result) => {
     data = result;
   });
-  useEffect(() => {
-    timeLoad();
+  useEffect(() => {    
+    if(window.innerWidth > 700){
+      timeLoad();
+    }else{
+      clearTimeout(timeLoad());
+    }
     const item = document.querySelectorAll(".navItem");
     const contentItem = document.querySelectorAll(".content-item");
     const clear = (item) => {
