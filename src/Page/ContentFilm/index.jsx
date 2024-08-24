@@ -30,6 +30,7 @@ function UnevenSetsInfinite(props) {
     centerPadding: "50%",
     draggable: true,
     accessibility: true,    
+    touchThreshold: 10
   };   
   return props.data.map((result) => (
     <div      

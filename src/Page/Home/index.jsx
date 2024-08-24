@@ -32,7 +32,7 @@ function Home() {
   };
   let myTimeOut;
   const timeLoad = () => {
-    myTimeOut = setTimeout(() => {
+    myTimeOut = setTimeout(() => {    
       getClassToggle(posterRef, "none");
       getTagAdd(posterRef, "hide");
       getTagAdd(videoRef, "show");
@@ -47,7 +47,7 @@ function Home() {
         document.querySelector(".describe-film").classList.add("hide");
       }
     }, 2000);
-  };
+  };  
   const volunmTP = (check, classNameTag, classReplace, iconCheck) => {
     videoRef.current.muted = check;
     getTagClassList(volunmRefChild, classNameTag, classReplace);
@@ -343,7 +343,7 @@ function Home() {
     data = result;
   });
   useEffect(() => {    
-    if(document.querySelector('body').offsetWidth > 700){
+    if(window.innerWidth > 700){
       timeLoad();
     }
     const item = document.querySelectorAll(".navItem");
