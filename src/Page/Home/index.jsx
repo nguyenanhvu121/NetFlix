@@ -20,63 +20,63 @@ function Home() {
   const iconMutedRef = useRef();
   const volunmRef = useRef();
   const volunmRefChild = useRef();  
-  let iconCheck = "muted";
-  const getTagClassList = (element, classA, classB) => {
-    element.current.classList.replace(classA, classB);
-  };
-  const getClassToggle = (nameTag, nameToggle) => {
-    nameTag.current.classList.toggle(nameToggle);
-  };
-  const getTagAdd = (nameTag, classAdd) => {
-    nameTag.current.classList.add(classAdd);
-  };
-  let myTimeOut;
-  const timeLoad = () => {
-    myTimeOut = setTimeout(() => {
-      getClassToggle(posterRef, "none");
-      getTagAdd(posterRef, "hide");
-      getTagAdd(videoRef, "show");
-      getClassToggle(videoRef, "none");
-      getClassToggle(volunmRef, "none");
-      videoRef.current.play();
-      if (!!timeLoad) {
-        clearTimeout(timeLoad);
-      }    
-      if (document.querySelector("body").offsetWidth > 900) {
-        document.querySelector(".title-main-block").classList.add("zoomIn");
-        document.querySelector(".describe-film").classList.add("hide");
-      }
-    }, 2000);
-  };
-  const volunmTP = (check, classNameTag, classReplace, iconCheck) => {
-    videoRef.current.muted = check;
-    getTagClassList(volunmRefChild, classNameTag, classReplace);
-    iconMutedRef.current.src = iconCheck;
-  };
-  const volunm = (key) => {
-    if (key.classList.contains("muted")) {
-      volunmTP(false, "muted", "speaker", speaker);
-      iconCheck = "speaker";
-    } else if (key.classList.contains("speaker")) {
-      volunmTP(true, "speaker", "muted", mute);
-      iconCheck = "muted";
-    } else if (key.classList.contains("reload")) {
-      getTagClassList(posterRef, "show", "hide");
-      getTagClassList(videoRef, "hide", "show");
-      getClassToggle(videoRef, "none");
-      getClassToggle(posterRef, "none");
-      videoRef.current.play();
-      if (iconCheck == "muted") {
-        volunmTP(true, "reload", "muted", mute);
-      } else {
-        volunmTP(false, "reload", "speaker", speaker);
-      }
-    }
-  };
+  // let iconCheck = "muted";
+  // const getTagClassList = (element, classA, classB) => {
+  //   element.current.classList.replace(classA, classB);
+  // };
+  // const getClassToggle = (nameTag, nameToggle) => {
+  //   nameTag.current.classList.toggle(nameToggle);
+  // };
+  // const getTagAdd = (nameTag, classAdd) => {
+  //   nameTag.current.classList.add(classAdd);
+  // };
+  // let myTimeOut;
+  // const timeLoad = () => {
+  //   myTimeOut = setTimeout(() => {
+  //     getClassToggle(posterRef, "none");
+  //     getTagAdd(posterRef, "hide");
+  //     getTagAdd(videoRef, "show");
+  //     getClassToggle(videoRef, "none");
+  //     getClassToggle(volunmRef, "none");
+  //     videoRef.current.play();
+  //     if (!!timeLoad) {
+  //       clearTimeout(timeLoad);
+  //     }    
+  //     if (document.querySelector("body").offsetWidth > 900) {
+  //       document.querySelector(".title-main-block").classList.add("zoomIn");
+  //       document.querySelector(".describe-film").classList.add("hide");
+  //     }
+  //   }, 2000);
+  // };
+  // const volunmTP = (check, classNameTag, classReplace, iconCheck) => {
+  //   videoRef.current.muted = check;
+  //   getTagClassList(volunmRefChild, classNameTag, classReplace);
+  //   iconMutedRef.current.src = iconCheck;
+  // };
+  // const volunm = (key) => {
+  //   if (key.classList.contains("muted")) {
+  //     volunmTP(false, "muted", "speaker", speaker);
+  //     iconCheck = "speaker";
+  //   } else if (key.classList.contains("speaker")) {
+  //     volunmTP(true, "speaker", "muted", mute);
+  //     iconCheck = "muted";
+  //   } else if (key.classList.contains("reload")) {
+  //     getTagClassList(posterRef, "show", "hide");
+  //     getTagClassList(videoRef, "hide", "show");
+  //     getClassToggle(videoRef, "none");
+  //     getClassToggle(posterRef, "none");
+  //     videoRef.current.play();
+  //     if (iconCheck == "muted") {
+  //       volunmTP(true, "reload", "muted", mute);
+  //     } else {
+  //       volunmTP(false, "reload", "speaker", speaker);
+  //     }
+  //   }
+  // };
   const navigate = useNavigate();
   const handleTitle = (link) => {
     navigate(`/title/${link}`);
-    clearTimeout(myTimeOut);
+    // clearTimeout(myTimeOut);
     window.scrollTo(0,0);
   };
   const handleMylist = () => {
@@ -91,24 +91,24 @@ function Home() {
       }
     });
   };
-  const handleVideoEnd = () => {
-    getClassToggle(videoRef, "none");
-    getClassToggle(posterRef, "none");
-    getTagClassList(videoRef, "show", "hide");
-    getTagClassList(posterRef, "hide", "show");
-    volunmRefChild.current.classList.replace(iconCheck, "reload");
-    iconMutedRef.current.src = reload;
-    if (
-      document.querySelector(".title-main-block").classList.contains("zoomIn")
-    ) {
-      document
-        .querySelector(".title-main-block")
-        .classList.replace("zoomIn", "zoomOut");
-      document
-        .querySelector(".describe-film")
-        .classList.replace("hide", "show");
-    }
-  };
+  // const handleVideoEnd = () => {
+  //   getClassToggle(videoRef, "none");
+  //   getClassToggle(posterRef, "none");
+  //   getTagClassList(videoRef, "show", "hide");
+  //   getTagClassList(posterRef, "hide", "show");
+  //   volunmRefChild.current.classList.replace(iconCheck, "reload");
+  //   iconMutedRef.current.src = reload;
+  //   if (
+  //     document.querySelector(".title-main-block").classList.contains("zoomIn")
+  //   ) {
+  //     document
+  //       .querySelector(".title-main-block")
+  //       .classList.replace("zoomIn", "zoomOut");
+  //     document
+  //       .querySelector(".describe-film")
+  //       .classList.replace("hide", "show");
+  //   }
+  // };
   let data;
   const api = [
     {
@@ -343,11 +343,11 @@ function Home() {
     data = result;
   });
   useEffect(() => {        
-    if(document.querySelector('body').offsetWidth > 700){
-      timeLoad()
-    }else{
-      clearTimeout(timeLoad());
-    }
+    // if(document.querySelector('body').offsetWidth > 500){
+    //   timeLoad();
+    // }else{
+    //   clearTimeout(timeLoad());
+    // }
     const item = document.querySelectorAll(".navItem");
     const contentItem = document.querySelectorAll(".content-item");
     const clear = (item) => {
