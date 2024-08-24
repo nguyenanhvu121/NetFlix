@@ -351,11 +351,11 @@ function Home() {
     const item = document.querySelectorAll(".navItem");
     const contentItem = document.querySelectorAll(".content-item");
     const clear = (item) => {
-      item.forEach((element) => {
-        element.addEventListener("click", () => {
-          clearTimeout(myTimeOut);
-        });
-      });
+      // item.forEach((element) => {
+      //   element.addEventListener("click", () => {
+      //     clearTimeout(myTimeOut);
+      //   });
+      // });
     };
     clear(item);
     clear(contentItem);
@@ -373,7 +373,7 @@ function Home() {
                 alt=""
                 className="img-poster"
               />
-              <video
+              {/* <video
                 onEnded={handleVideoEnd}
                 ref={videoRef}
                 className="none videoPoster"
@@ -381,7 +381,7 @@ function Home() {
                 muted
                 id="videoPoster"
                 src={data.video}
-              ></video>
+              ></video> */}
               <span className="poster-thubnail"></span>
             </div>
             <div className="title">
@@ -459,7 +459,7 @@ function Home() {
           <div className="infoTitle none">
             <div></div>
           </div>
-          <div className="volunm none" ref={volunmRef}>
+          {/* <div className="volunm none" ref={volunmRef}>
             <div
               onClick={(event) => {
                 volunm(event.target);
@@ -469,7 +469,7 @@ function Home() {
             >
               <img ref={iconMutedRef} className="muted" src={mute} alt="" />
             </div>
-          </div>
+          </div> */}
         </div>
         <div style={{ margin: "0 4% 5% 4%" }} className="info-phone none">
           <div className="thumnail-phone">
