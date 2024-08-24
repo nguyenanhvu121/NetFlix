@@ -2,6 +2,7 @@
     position: relative;        
 }
 .darkmain{    
+    height: 662px;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, #000000 6%, rgba(0,0,0,0.8528832378223495) 21%, rgba(0,0,0,0.21104942693409745) 100%);    
 }    
@@ -156,6 +157,9 @@
     .titleMain img{
         width: 100%;
     }
+    .darkmain{
+        height: unset;
+    }
     .volunm{
         top: 12%;        
         width: 25px;
@@ -180,7 +184,7 @@
     }      
     .title{
         top: 30%;
-    }
+    }            
     @keyframes zoomOut{
         from {
             top: 70px;
