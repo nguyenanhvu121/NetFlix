@@ -292,24 +292,19 @@ function Index() {
             id : 10,
             img: "https://occ-0-325-395.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZtDm5eWmVg7jeh3vM7vylsvSC3Yn5SOmu6GnDHUIFE2QYT0xOQV0BULL2nfllaykG2kloR2OevtM7n_Zrayd35lDGFvkwdexJMpphPpOvkawkCnROW2oB2_QMB9CVzgKvQeMw.jpg?r=9c4",
             link: "",
-          },
+          },          
           { 
             id : 11,
-            img: "https://occ-0-325-395.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdYnAmsqkf9ibBiJYzBQfqNzAM2mYAnFUk4o4jN3sUcm6krm3kdEbiUd9ReR0tlz_7S5sn3x3lNixoeKne7vwx99QV9uIt27IpBXYYPAqd3A-zcLJ73tKLZkg7EIweVyHxFkTQ.jpg?r=c71",
-            link: "",
-          },
-          { 
-            id : 12,
             img: "https://occ-0-325-395.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRfxfeF_MJ6NLmZTgP7dSJFvYvuRpQf0MJvwtOUudFwK-ELOmHTVlX6919-9j60I2JjPFkaV3K8hlfwkYeymQuXac-cw-wfONN-rV6o5Gk04YU9gRgPAL8paeruBT4zZBNMT.jpg?r=854",
             link: "",
           },
           { 
-            id : 13,
+            id : 12,
             img: "https://occ-0-325-395.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZRO0rZNNk7tXWioHRWEy2oV4LEQbGHtsCQ0ecKp4z8DBIOwiSSnsML9SW94CpgdZf0FLtVvl8wb-uhDvM6-KjD9HK6nHwmKeufApsFHVPKLBM-nQRXSqrho2oTd1f-hKVNp.jpg?r=0fe",
             link: "",
           },
           { 
-            id : 14,
+            id : 13,
             img: "https://occ-0-325-395.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRvoNokeYjPJYpX3qzQJQ4E10ewi1txXV9yzpHeSyEfjLucsTkODK_x5e8TL4NdN5xDTwa1rsjLjFSZiRcuxntXhyWn2CzXYqZz0eFKuN19LY9JOn-4JcbKz9LN-VB-WpCvA.jpg?r=910",
             link: "",
           },

@@ -112,7 +112,12 @@ function Header(props) {
                   <li className="item-list-list-item-child">
                     Danh sách của tôi
                   </li>
-                  <li onClick={handleGoProducty} className="item-list-list-item-child">Mới & phổ biến</li>
+                  <li
+                    onMouseOver={handleGoProducty}
+                    className="item-list-list-item-child"
+                  >
+                    Mới & phổ biến
+                  </li>
                 </ul>
               </div>
             </li>

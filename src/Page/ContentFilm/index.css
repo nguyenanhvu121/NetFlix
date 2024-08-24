@@ -17,6 +17,9 @@
 .slick-list{
     z-index: 1;
 }
+.slick-dots li{
+    margin: 0px;
+}
 .slick-dots li button::before{    
     color: rgba(255, 255, 255, 0.5);
     content: "⎯";
@@ -89,6 +92,15 @@
     font-weight: 800;
     color: rgb(202, 36, 36);
 }
+@media only screen and (max-width: 900px){
+    @keyframes kty{
+        from {
+            left: -100%;        
+        }to{
+            left: -70%;
+        }
+    }    
+}
 @media only screen and (max-width: 500px){
     .slick-prev{
         left: -20px;
@@ -118,13 +130,4 @@
     .title-slider h3{
         font-size: 12px;
     }
-}
-@media only screen and (max-width: 900px){
-    @keyframes kty{
-        from {
-            left: -100%;        
-        }to{
-            left: -70%;
-        }
-    }    
 }
