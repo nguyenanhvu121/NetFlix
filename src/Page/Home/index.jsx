@@ -364,7 +364,7 @@ function Home() {
           <div className="darkmain">
             <div className="poster">
               <img
-                ref={posterRef}
+                ref={posterRef}                
                 src={data.poster}
                 alt=""
                 className="img-poster"
