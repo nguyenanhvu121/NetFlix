@@ -342,9 +342,9 @@ function Home() {
   api.map((result) => {
     data = result;
   });
-  useEffect(() => {    
-    if(window.innerWidth > 700){
-      timeLoad();
+  useEffect(() => {        
+    if(document.querySelector('body').offsetWidth > 500){
+      timeLoad()
     }else{
       clearTimeout(timeLoad());
     }
