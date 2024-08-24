@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import play from "../Image/play.png";
 import plus from "../Image/plus.png";
 import check from "../Image/check.png";
-import mute from "../Image/mute.png";
-import speaker from "../Image/speaker.png";
-import reload from "../Image/reload.png";
 import "./index.css";
 import Button from "../PageComponent/Button";
 import Content from "../ContentFilm";
@@ -12,71 +9,10 @@ import Header from "../../DefaultLayout/Header";
 import video from "./Trailer/trailer.mp4";
 import Footer from "../../DefaultLayout/Footer";
 import { useNavigate } from "react-router-dom";
-function Home() {
-  const posterRef = useRef();
-  const videoRef = useRef();
-  const titleRef = useRef();
-  const describeRef = useRef();
-  const iconMutedRef = useRef();
-  const volunmRef = useRef();
-  const volunmRefChild = useRef();  
-  // let iconCheck = "muted";
-  // const getTagClassList = (element, classA, classB) => {
-  //   element.current.classList.replace(classA, classB);
-  // };
-  // const getClassToggle = (nameTag, nameToggle) => {
-  //   nameTag.current.classList.toggle(nameToggle);
-  // };
-  // const getTagAdd = (nameTag, classAdd) => {
-  //   nameTag.current.classList.add(classAdd);
-  // };
-  // let myTimeOut;
-  // const timeLoad = () => {
-  //   myTimeOut = setTimeout(() => {
-  //     getClassToggle(posterRef, "none");
-  //     getTagAdd(posterRef, "hide");
-  //     getTagAdd(videoRef, "show");
-  //     getClassToggle(videoRef, "none");
-  //     getClassToggle(volunmRef, "none");
-  //     videoRef.current.play();
-  //     if (!!timeLoad) {
-  //       clearTimeout(timeLoad);
-  //     }    
-  //     if (document.querySelector("body").offsetWidth > 900) {
-  //       document.querySelector(".title-main-block").classList.add("zoomIn");
-  //       document.querySelector(".describe-film").classList.add("hide");
-  //     }
-  //   }, 2000);
-  // };
-  // const volunmTP = (check, classNameTag, classReplace, iconCheck) => {
-  //   videoRef.current.muted = check;
-  //   getTagClassList(volunmRefChild, classNameTag, classReplace);
-  //   iconMutedRef.current.src = iconCheck;
-  // };
-  // const volunm = (key) => {
-  //   if (key.classList.contains("muted")) {
-  //     volunmTP(false, "muted", "speaker", speaker);
-  //     iconCheck = "speaker";
-  //   } else if (key.classList.contains("speaker")) {
-  //     volunmTP(true, "speaker", "muted", mute);
-  //     iconCheck = "muted";
-  //   } else if (key.classList.contains("reload")) {
-  //     getTagClassList(posterRef, "show", "hide");
-  //     getTagClassList(videoRef, "hide", "show");
-  //     getClassToggle(videoRef, "none");
-  //     getClassToggle(posterRef, "none");
-  //     videoRef.current.play();
-  //     if (iconCheck == "muted") {
-  //       volunmTP(true, "reload", "muted", mute);
-  //     } else {
-  //       volunmTP(false, "reload", "speaker", speaker);
-  //     }
-  //   }
-  // };
+function Home() {  
   const navigate = useNavigate();
   const handleTitle = (link) => {
-    navigate(`/title/${link}`);
-    // clearTimeout(myTimeOut);
+    navigate(`/title/${link}`);    
     window.scrollTo(0,0);
   };
   const handleMylist = () => {
@@ -90,25 +26,7 @@ function Home() {
         element.classList.toggle("plus");
       }
     });
-  };
-  // const handleVideoEnd = () => {
-  //   getClassToggle(videoRef, "none");
-  //   getClassToggle(posterRef, "none");
-  //   getTagClassList(videoRef, "show", "hide");
-  //   getTagClassList(posterRef, "hide", "show");
-  //   volunmRefChild.current.classList.replace(iconCheck, "reload");
-  //   iconMutedRef.current.src = reload;
-  //   if (
-  //     document.querySelector(".title-main-block").classList.contains("zoomIn")
-  //   ) {
-  //     document
-  //       .querySelector(".title-main-block")
-  //       .classList.replace("zoomIn", "zoomOut");
-  //     document
-  //       .querySelector(".describe-film")
-  //       .classList.replace("hide", "show");
-  //   }
-  // };
+  };  
   let data;
   const api = [
     {
@@ -342,20 +260,10 @@ function Home() {
   api.map((result) => {
     data = result;
   });
-  useEffect(() => {        
-    // if(document.querySelector('body').offsetWidth > 500){
-    //   timeLoad();
-    // }else{
-    //   clearTimeout(timeLoad());
-    // }
+  useEffect(() => {            
     const item = document.querySelectorAll(".navItem");
     const contentItem = document.querySelectorAll(".content-item");
-    const clear = (item) => {
-      // item.forEach((element) => {
-      //   element.addEventListener("click", () => {
-      //     clearTimeout(myTimeOut);
-      //   });
-      // });
+    const clear = (item) => {      
     };
     clear(item);
     clear(contentItem);
@@ -367,27 +275,16 @@ function Home() {
         <div className="main">
           <div className="darkmain">
             <div className="poster">
-              <img
-                ref={posterRef}
+              <img                
                 src={data.poster}
                 alt=""
                 className="img-poster"
-              />
-              {/* <video
-                onEnded={handleVideoEnd}
-                ref={videoRef}
-                className="none videoPoster"
-                autoPlay
-                muted
-                id="videoPoster"
-                src={data.video}
-              ></video> */}
+              />             
               <span className="poster-thubnail"></span>
             </div>
             <div className="title">
               <div
-                style={{ cursor: "pointer" }}
-                ref={titleRef}
+                style={{ cursor: "pointer" }}                
                 className="titleMain"
               >
                 <div className="title-main-block">
@@ -404,7 +301,7 @@ function Home() {
                       <p>Top 1 Thịnh Hành</p>
                     </div>
                   )}
-                  <div ref={describeRef} className="describe">
+                  <div className="describe">
                     <h1>{data.nameFilm}</h1>
                     <p className="describe-film">{data.describe}</p>
                   </div>

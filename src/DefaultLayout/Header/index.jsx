@@ -6,7 +6,7 @@ import down from "./HeaderComponent/Image/down.png";
 import Notification from "./HeaderComponent/Notification";
 import { useNavigate } from "react-router-dom";
 
-function Header(props) {
+function Header() {
   const navigate = useNavigate();
   const handleGoProducts = () => {
     navigate("/");

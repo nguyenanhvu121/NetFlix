@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Header from "../../DefaultLayout/Header";
 import Footer from "../../DefaultLayout/Footer";
-import down from "./Image/down.png";
 import align from "./Image/align.png";
 import menu from "./Image/menu.png";
 import Content from "../../Page/ContentFilmPage";
