@@ -343,7 +343,7 @@ function Home() {
     data = result;
   });
   useEffect(() => {        
-    if(document.querySelector('body').offsetWidth > 500){
+    if(document.querySelector('body').offsetWidth > 700){
       timeLoad()
     }else{
       clearTimeout(timeLoad());
