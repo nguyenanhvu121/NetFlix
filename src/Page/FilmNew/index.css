@@ -29,7 +29,7 @@
 .new-main-header ul li h3:hover{
     text-decoration: underline solid rgba(255, 255, 255, 1);
 }
-.new-main-header ul li h3{
+.new-main-header ul li{
     font-size: 25px;
     font-weight: 900;
     padding: 10px;    

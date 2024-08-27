@@ -8,54 +8,47 @@ function Trailer(props) {
   const [title, setTitle] = useState();
   const [poster, setPoster] = useState();
   const [video, setVideo] = useState();  
-  const [grene, setGrene] = useState(0);
   let myTimeOut;
   let loadAround;
-  let buttonPlay;
-  let watch;
-  useEffect(() => {    
+  const handleClick = (result) => {
     loadAround = document.querySelector(".load-arround");
-    buttonPlay = document.querySelector(".timeLine-buttonPlay");
-    watch = document.querySelector(".watch");
-    const timeFunc = () =>{
+    const buttonPlay = document.querySelector(".timeLine-buttonPlay");
+    const watch = document.querySelector(".watch"); ;    
+    watch.classList.toggle("none");
+    buttonPlay.src = pause;
+    buttonPlay.classList.add("pause");
+    loadAround.classList.toggle("none");
+    setTitle(result.trailerSeason);
+    setPoster(result.trailerPoster);
+    setVideo(result.trailerVideo);
+    const myTimeOut = setTimeout(() => {
+      document.querySelector(".watch-poster-video").play();
+      document.querySelector(".timeLine").classList.remove("none");
+      document.querySelector(".watch-grene-text").classList.add("hideGenre");
+    }, 2000);
+  };
+  useEffect(() => {    
+    const timeFunc = () => {
       clearTimeout(myTimeOut);
-      if(!document.querySelector('.timeLine').classList.contains("none")){
-        document.querySelector('.timeLine').classList.add("none");
+      if (!document.querySelector(".timeLine").classList.contains("none")) {
+        document.querySelector(".timeLine").classList.add("none");
       }
       if (!loadAround.classList.contains("none")) {
-        loadAround.classList.toggle("none");        
-      }                                                     
-    }    
+        loadAround.classList.toggle("none");
+      }
+    };
     document.querySelector(".dark-watch").addEventListener("click", () => {
       timeFunc();
     });
-    document.querySelector('.close-watch').
-      addEventListener("click", () => {
-        timeFunc();
-      });
-  });
+    document.querySelector(".close-watch").addEventListener("click", () => {
+      timeFunc();
+    });
+  }, []);
   return (
     <div className="">
       <div className="flex">
         {data.map((result) => (
-          <div
-          key={result.id}
-            onClick={() => {
-              watch.classList.toggle("none");
-              buttonPlay.src = pause;
-              buttonPlay.classList.add("pause");
-              loadAround.classList.toggle("none");
-              setTitle(result.trailerSeason);
-              setPoster(result.trailerPoster);
-              setVideo(result.trailerVideo);              
-              myTimeOut = setTimeout(() => {
-                document.querySelector(".watch-poster-video").play();                                                               
-                document.querySelector('.timeLine').classList.remove("none");
-                document.querySelector('.watch-grene-text').classList.add("hideGenre");
-              }, 2000);
-            }}
-            className="trailer"
-          >
+          <div key={result.id} onClick={() =>{handleClick(result)}} className="trailer">
             <img
               style={{ height: "150px", backgroundColor: "rgb(62, 60, 60)" }}
               lazy-src={result.trailerPoster}
@@ -70,7 +63,7 @@ function Trailer(props) {
           </div>
         ))}
       </div>
-      <Watch grene = {props.genre} video={video} title={title} poster={poster} />
+      <Watch grene={props.genre} video={video} title={title} poster={poster} />
     </div>
   );
 }

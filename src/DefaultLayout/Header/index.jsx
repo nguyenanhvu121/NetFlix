@@ -24,12 +24,10 @@ function Header() {
     navigate("/Moi&Phobien");
     window.scrollTo(0, 0);
   };
-  useEffect(() => {
-    const listChild = document.querySelectorAll(".item-list-list-item-child");
-    listChild.forEach((element) => {
-      element.addEventListener("mouseover", () => {
-        document.querySelector(".icon-list").classList.remove("rotate");
-      });
+  const listChild = document.querySelectorAll(".item-list-list-item-child");
+  listChild.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      document.querySelector(".icon-list").classList.remove("rotate");
     });
   });
   return (

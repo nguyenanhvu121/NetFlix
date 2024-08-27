@@ -13,8 +13,7 @@ function Watch(props) {
   const [minFm, setMinFm] = useState(0);
   const [seFm, setSeFm] = useState(0);
   const [checkVoid, setCheckVoid] = useState(1);
-  const [iconFullscreen, setIconFullscreen] = useState(fullScreen);
-  const [checkPause, setCheckPause] = useState(false);
+  const [iconFullscreen, setIconFullscreen] = useState(fullScreen);  
   let videoWatch;
   let buttonPlay;
   let watch;
@@ -27,28 +26,32 @@ function Watch(props) {
     videoWatch.load();
   };
   const handlePlay = () => {
+    const pause = document.querySelector(".load-pause");
+    const play = document.querySelector(".load-pause");
     if (buttonPlay.classList.contains("pause")) {
       videoWatch.pause();
       buttonPlay.classList.remove("pause");
       buttonPlay.src = play;
-      document.querySelector(".load-pause").classList.replace("none", "flex");
-      document.querySelector(".load-play").classList.replace("flex", "none");
+      pause.classList.replace("none", "flex");
+      play.classList.replace("flex", "none");
     } else {
       buttonPlay.classList.add("pause");
       buttonPlay.src = pause;
       videoWatch.play();
-      document.querySelector(".load-play").classList.replace("none", "flex");
-      document.querySelector(".load-pause").classList.replace("flex", "none");
+      pause.classList.replace("none", "flex");
+      play.classList.replace("flex", "none");
     }
   };
   const handleInput = (event) => {
     videoWatch.volume = event.target.value;
+    const icon = document.querySelector(".button-speaker-icon")
+    const watch = document.querySelector(".watch-poster-video");
     if (event.target.value == 0) {
-      document.querySelector(".button-speaker-icon").src = mute;
-      document.querySelector(".watch-poster-video").muted = true;
+      icon.src = mute;
+      watch.muted = true;
     } else {
-      document.querySelector(".button-speaker-icon").src = speaker;
-      document.querySelector(".watch-poster-video").muted = false;
+      icon.src = speaker;
+      watch.muted = false;
     }
     setCheckVoid(event.target.value);
   };

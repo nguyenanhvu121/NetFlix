@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 function Index() {
   const navigate = useNavigate();
-  const handleProduct = () =>{
-    navigate('/')
-  }
+  const handleProduct = () => {
+    navigate("/");
+  };
   const fakeApi = [
     {
       All: [
@@ -83,20 +83,16 @@ function Index() {
   fakeApi.map((result) => {
     dataMain = result;
   });
-  const [data, setData] = useState(dataMain.All);  
-  useEffect(() => {
-    const item = document.querySelectorAll(".new-header-item");
-    item.forEach((element) => {
-      element.addEventListener("click", () => {
-        item.forEach((element) => {
-          element.classList.remove("new-header-handle");
-          element.firstElementChild.style.color = "#f72e38";
-        });
-        element.classList.add("new-header-handle");
-        element.firstElementChild.style.color = "rgb(255,255,255)";
-      });
+  const [data, setData] = useState(dataMain.All);
+  const handleData = (event) => {
+    const item = document.querySelectorAll('.new-header-item');
+    item.forEach(element => {
+      element.classList.remove("new-header-handle");
+      element.style.color = "#f72e38";
     });
-  });
+    event.target.classList.add('new-header-handle');
+    event.target.style.color = "#fff";
+  };
   return (
     <div>
       <div className="new-main show">
@@ -109,20 +105,44 @@ function Index() {
         <div className="new-content">
           <div className="new-main-header">
             <ul className="flex">
-              <li onClick={() =>{setData(dataMain.All)}} className="new-header-item new-header-handle">
-                <h3>All</h3>
+              <li
+                onClick={(event) => {
+                  setData(dataMain.All);
+                  handleData(event);
+                }}
+                className="new-header-item new-header-handle"
+              >
+                All
               </li>
-              <li onClick={() =>{setData(dataMain.Film)}} className="new-header-item">
-                <h3>Film</h3>
+              <li
+                onClick={(event) => {
+                  setData(dataMain.Film);
+                  handleData(event);
+                }}
+                className="new-header-item"
+              >
+                Film
               </li>
-              <li onClick={() =>{setData(dataMain.Series)}} className="new-header-item">
-                <h3>Series</h3>
+              <li
+                onClick={(event) => {
+                  handleData(event)
+                  setData(dataMain.Series);
+                }}
+                className="new-header-item"
+              >
+                Series
               </li>
-              <li className="new-header-item">
-                <h3>Specials</h3>
-              </li>
-              <li onClick={() =>{setData(dataMain.Game)}} className="new-header-item">
-                <h3>Games</h3>
+              <li onClick={(event) =>{
+                handleData(event)
+              }} className="new-header-item">Specials</li>
+              <li
+                onClick={(event) => {
+                  handleData(event);
+                  setData(dataMain.Game);
+                }}
+                className="new-header-item"
+              >
+                Games
               </li>
             </ul>
           </div>
@@ -143,22 +163,22 @@ function Index() {
         </div>
         <div className="new-footer">
           <div className="head-footer flex">
-          <div className="logo">
-            <img src={logo} alt="" />
-          </div>
-          <div className="contact">
-            <ul className="flex">
-              <li>
+            <div className="logo">
+              <img src={logo} alt="" />
+            </div>
+            <div className="contact">
+              <ul className="flex">
+                <li>
                   <img src={twitter} alt="" />
-              </li>
-              <li className="insta">
-                <img src={instagram} alt="" />
-              </li>
-              <li>
+                </li>
+                <li className="insta">
+                  <img src={instagram} alt="" />
+                </li>
+                <li>
                   <img src={facebook} alt="" />
-              </li>
-            </ul>
-          </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="bottom-footer">
             <ul className="flex">
@@ -169,7 +189,7 @@ function Index() {
               <li>Privacy</li>
               <li>Cookie Preferences</li>
               <li>© 2024 NexFlix</li>
-            </ul>          
+            </ul>
           </div>
         </div>
       </div>

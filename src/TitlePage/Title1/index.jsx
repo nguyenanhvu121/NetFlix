@@ -1,13 +1,11 @@
 import React from 'react'
 import Title from '../../Title'
-import { Link } from 'react-router-dom';
 import season5 from './VideoTrailer/season5.mp4'
 import season4Recap from './VideoTrailer/season4_recap.mp4'
 import season4Trailer from './VideoTrailer/season4_recap.mp4'
 import season3Recap from './VideoTrailer/season3_recap.mp4'
 import season3Trailer from './VideoTrailer/season3_trailer.mp4'
 import season2 from './VideoTrailer/season2.mp4'
-import season3_recap from './VideoTrailer/season2_recap.mp4'
 import season1 from './VideoTrailer/season1.mp4'
 import season5_volunm2_teaser from './VideoTrailer/season5_volunm2_teaser.mp4'
 function index() {  
@@ -758,6 +756,7 @@ function index() {
       ]                      
     }    
   ];
+  
   return (
     <div>
         <Title 

@@ -42,7 +42,7 @@ function Title(props) {
         logo.classList.remove("none");
       }
     });  
-  });
+  }, []);
   const handleSelect = (event) => {
     const season = document.querySelectorAll(".season");
     season.forEach((element) => {

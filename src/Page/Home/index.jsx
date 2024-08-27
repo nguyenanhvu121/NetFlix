@@ -354,8 +354,8 @@ function Home() {
       });
     };
     clear(item);
-    clear(contentItem);
-  });
+    clear(contentItem);    
+  }, []);  
   return (
     <>
       <Header />

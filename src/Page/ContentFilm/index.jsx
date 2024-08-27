@@ -1,11 +1,11 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { Component, useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import "./index.css";
 import next from "./image/arrow.png";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function UnevenSetsInfinite(props) {  
   const navigate = useNavigate();
   const handleGoTile = (sourc) => {

@@ -31,11 +31,11 @@ function Notification() {
   const [valueNew, setValueNew]  = useState(0);  
   let count = 0;
   useEffect(() =>{
-        Api.map((result) =>{
-            !!result.new && count++
-        })
+    Api.map((result) =>{
+      !!result.new && count++
+    })
   setValueNew(count);
-  })    
+  }, [])    
   return (
     <div>      
         {Api.length > 0 && <span className="iconBell flex">{valueNew}</span>}

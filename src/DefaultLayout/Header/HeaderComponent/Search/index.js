@@ -8,11 +8,7 @@ function Search() {
   const inputRef = useRef();       
   const listFilmRef = useRef();  
   const valueSearch = (value) =>{    
-    if(!!value){
-      listFilmRef.current.classList.remove("none");
-    }else{
-      listFilmRef.current.classList.add("none")
-    }
+    (!!value) ?listFilmRef.current.classList.remove("none") : listFilmRef.current.classList.add("none")    
   }  
   return (
     <div style={{position: "relative"}}>
